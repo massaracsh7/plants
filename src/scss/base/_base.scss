@@ -1,0 +1,57 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @extend %font-prim;
+  @include font(20px, 20px, 400);
+}
+
+.main-title {
+  @include font(45px, 50px, 700);
+  color: $color-text;
+    @include media-tablet {
+      font-size: 35px;
+    }
+
+    @include media-mobile {
+      font-size: 25px;
+      line-height: 35px;
+    }
+}
+
+.title {
+  @extend %font-add;
+  @include font(40px, 52px, 400);
+  color: $color-primary;
+
+  span {
+    color: $color-additional;
+  }
+
+  @include media-tablet {
+    @include font(35px, 46px, 400);
+  }
+
+  @include media-mobile {
+    @include font(25px, 33px, 400);
+  }
+}
+
+.title-black {
+  @include font(40px, 50px, 700);
+
+  span {
+    color: $color-primary;
+  }
+  @include media-tablet {
+    font-size: 35px;
+    line-height: 40px;
+  }
+
+  @include media-mobilesm {
+    text-align: center;
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
