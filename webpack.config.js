@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const devServer = (isDev) => !isDev ? {} : {
   devServer: {
@@ -24,7 +25,7 @@ module.exports = ({ development }) => ({
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true, // Добавлено для очистки папки dist, заменяет CleanWebpackPlugin для Webpack 5
+    clean: true,
   },
   module: {
     rules: [
@@ -58,7 +59,7 @@ module.exports = ({ development }) => ({
     new HtmlWebpackPlugin({
       favicon: "./src/assets/favicon/favicon.ico",
       template: './src/index.html',
-      inject: 'body', // Изменено с head на body
+      inject: 'body',
       scriptLoading: 'defer',
     }),
     new CopyPlugin({
@@ -66,6 +67,7 @@ module.exports = ({ development }) => ({
         {
           from: 'src/assets/images',
           to: 'images',
+          noErrorOnMissing: true,
         },
         {
           from: 'src/assets/favicon/favicon.ico',
@@ -76,6 +78,25 @@ module.exports = ({ development }) => ({
           to: 'fonts',
         }
       ],
+    }),
+    new ImageMinimizerPlugin({
+      minimizer: {
+        implementation: ImageMinimizerPlugin.imageminMinify,
+        options: {
+          plugins: [
+            ["imagemin-mozjpeg", { quality: 80 }],
+            ['imagemin-pngquant', { quality: [0.6, 0.8] }],
+            ['imagemin-svgo', {
+              plugins: [
+                {
+                  name: 'removeViewBox',
+                  active: false,
+                },
+              ],
+            }],
+          ],
+        },
+      },
     }),
   ],
   resolve: {
