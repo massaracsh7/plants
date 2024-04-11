@@ -71,6 +71,7 @@
     }
 
     &__image {
+      align-self: flex-end;
 
       @include media-laptop {
         width: 200px;

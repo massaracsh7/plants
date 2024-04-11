@@ -1,3 +1,5 @@
+import { services, cities } from './data.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   initializeApp();
 });
@@ -7,6 +9,8 @@ function initializeApp() {
   addServiceButtonListeners();
   setupPriceListToggle();
   setupCitySelection();
+  createServiceItems(services);
+  createCitiesItems(cities);
 }
 
 function addBurgerMenuListener() {
@@ -113,4 +117,45 @@ function updateCitySelection(selectedOption, wrapper, image, button) {
   document.querySelectorAll('.city__item').forEach(item => item.classList.remove('city__item--active'));
   document.getElementById(selectedOption.dataset.city)?.classList.add('city__item--active');
   closeCitySelect(wrapper, wrapper, image, button);
+}
+
+function createServiceItems(services) {
+  const container = document.querySelector('.service__content');
+  services.forEach(service => {
+    const item = document.createElement('li');
+    item.className = 'service__item';
+    item.setAttribute('data-about', service.about);
+
+    item.innerHTML = `
+                    <img class="service__img" src="${service.imgSrc}" width="329" height="350" alt="${service.name}">
+                    <div class="service__info">
+                        <h4 class="service__name">${service.name}</h4>
+                        <p class="service__descr">${service.descr}</p>
+                    </div>
+                `;
+
+    container.appendChild(item);
+  });
+}
+
+function createCitiesItems(cities) {
+  const contactsCityDiv = document.querySelector('.contacts__city');
+
+  cities.forEach(city => {
+    const cityItem = document.createElement('div');
+    cityItem.className = 'city__item';
+    cityItem.id = city.id;
+
+    cityItem.innerHTML = `
+      <span>City:</span>
+      <span>${city.name}</span>
+      <span>Phone:</span>
+      <span><a href="tel:${city.phone}">${city.phone}</a></span>
+      <span>Office address:</span>
+      <span>${city.address}</span>
+      <button class="button city__button" onclick="window.open('tel:${city.phone}', '_system');">Call us</button>
+    `;
+
+    contactsCityDiv.appendChild(cityItem);
+  });
 }
