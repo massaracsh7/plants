@@ -127,7 +127,7 @@
 
         &::before {
           @extend %btn-accordeon;
-          background-image: url('./img/arrow-white.svg');
+          background-image: url('../assets/images/arrow-white.svg');
           background-color: #AEA1A1;
           top: 35%;
           right: 36px;
@@ -148,7 +148,7 @@
 
         &--active::before,
         &:hover::before {
-          background-image: url('./img/arrow-wh.svg');
+          background-image: url('../assets/images/arrow-wh.svg');
           background-color: #8BA07E;
         }
 

@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 const devServer = (isDev) => !isDev ? {} : {
@@ -9,7 +8,7 @@ const devServer = (isDev) => !isDev ? {} : {
     open: true,
     port: 8080,
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, 'public'),
     },
     watchFiles: ['src/**/*'],
   },
@@ -19,22 +18,30 @@ module.exports = ({ development }) => ({
   mode: development ? 'development' : 'production',
   devtool: development ? 'inline-source-map' : false,
   entry: {
-    main: './src/index.js', 
+    main: './src/index.js',
     styles: './src/scss/style.scss',
   },
   output: {
-    filename: '[name].[contenthash].js', 
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true, // Добавлено для очистки папки dist, заменяет CleanWebpackPlugin для Webpack 5
   },
   module: {
     rules: [
       {
-        test: /\.(png|jpg|jpeg|svg|gif|ico)$/,
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
         type: 'asset/resource',
+        generator: {
+          filename: 'images/[name][ext]'
+        }
       },
+
       {
-        test: /\.(woff(2)?|eot|ttf|otf)$/i,
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]'
+        }
       },
       {
         test: /\.css$/i,
@@ -42,16 +49,16 @@ module.exports = ({ development }) => ({
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-      }
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'styles.[contenthash].css' }), 
+    new MiniCssExtractPlugin({ filename: 'styles.[contenthash].css' }),
     new HtmlWebpackPlugin({
       favicon: "./src/assets/favicon/favicon.ico",
       template: './src/index.html',
-      inject: 'head', 
+      inject: 'body', // Изменено с head на body
       scriptLoading: 'defer',
     }),
     new CopyPlugin({
@@ -63,13 +70,16 @@ module.exports = ({ development }) => ({
         {
           from: 'src/assets/favicon/favicon.ico',
           to: '',
+        },
+        {
+          from: 'src/assets/fonts',
+          to: 'fonts',
         }
       ],
     }),
-    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
   ],
   resolve: {
     extensions: ['.js'],
   },
-  ...devServer(development)
+  ...devServer(development),
 });

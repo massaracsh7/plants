@@ -9,7 +9,7 @@
   }
 
   @include media-mobile {
-    background-image: url("./img/leafs-small.png");
+    background-image: url("../assets/images/leafs-small.png");
     background-position: bottom 0 right 0;
     background-repeat: no-repeat;
   }
@@ -23,12 +23,12 @@
     display: flex;
     justify-content: flex-end;
     padding-bottom: 30px;
-    background-image: url(./img/leafs.png);
+    background-image: url("../assets/images/leafs.png");
     background-repeat: no-repeat;
     background-position: -10px;
 
     @include media-laptop {
-      background-image: url(./img/leafs-middle.png);
+      background-image: url("../assets/images/leafs-middle.png");
       background-position: bottom 0 right 0;
       justify-content: flex-start;
       padding-bottom: 0;

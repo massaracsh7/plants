@@ -1,21 +1,21 @@
-@import "base/normalize";
-@import "abstract/constants";
-@import "abstract/mixins";
-@import "abstract/placeholder";
+@import "base/normalize.scss";
+@import "abstract/constants.scss";
+@import "abstract/mixins.scss";
+@import "abstract/placeholder.scss";
 
-@import "base/fonts";
-@import "base/base";
-@import "base/buttons";
-@import "base/burger";
+@import "base/fonts.scss";
+@import "base/base.scss";
+@import "base/buttons.scss";
+@import "base/burger.scss";
 
-@import "layouts/container";
-@import "layouts/header";
-@import "layouts/footer";
+@import "layouts/container.scss";
+@import "layouts/header.scss";
+@import "layouts/footer.scss";
 
-@import "components/menu";
-@import "components/welcome";
-@import "components/about";
-@import "components/service";
-@import "components/prices";
-@import "components/contacts";
-@import "components/social";
+@import "components/menu.scss";
+@import "components/welcome.scss";
+@import "components/about.scss";
+@import "components/service.scss";
+@import "components/prices.scss";
+@import "components/contacts.scss";
+@import "components/social.scss";
