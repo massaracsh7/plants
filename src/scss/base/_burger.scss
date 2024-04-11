@@ -1,0 +1,38 @@
+.burger {
+  display: none;
+  min-width: 40px;
+  height: 26px;
+  border-top: 2px solid $color-text;
+  border-bottom: 2px solid $color-text;
+  position: relative;
+  margin-left: auto;
+
+  &:before {
+    @extend %burger-line;
+    top: 6px;
+  }
+
+  &:after {
+    @extend %burger-line;
+    bottom: 6px;
+  }
+
+  @include media-mobile {
+    display: block;
+  }
+
+  &--open {
+    border: none;
+
+    &:before {
+      transition: transform 0.3s;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transition: transform 0.3s;
+      bottom: 19px;
+      transform: rotate(-45deg);
+    }
+  }
+}
