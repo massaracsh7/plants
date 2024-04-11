@@ -10,11 +10,13 @@
   &:before {
     @extend %burger-line;
     top: 6px;
+    right: 0;
   }
 
   &:after {
     @extend %burger-line;
     bottom: 6px;
+    right: 0;
   }
 
   @include media-mobile {
