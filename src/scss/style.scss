@@ -1,6 +1,13 @@
 @import "base/normalize";
 @import "abstract/constants";
 @import "abstract/mixins";
-
+@import "abstract/placeholder";
 
 @import "base/fonts";
+@import "base/base";
+@import "base/buttons";
+
+@import "layouts/container";
+@import "layouts/header";
+@import "layouts/footer";
+
