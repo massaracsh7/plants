@@ -40,7 +40,7 @@ To get this project up and running on your local machine, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/plants.git
+   git clone https://github.com/massaracsh7/plants.git
    cd plants
 
 2. **Install dependencies:**
