@@ -2,7 +2,18 @@
 
 ## Overview
 
+![Screen ](src/assets/screen.png)
+
 "Plants" is a landing page project designed to showcase garden plant growing and care services. This project is part of the stage#0 tasks RSSchool, where participants create an adaptive and interactive landing page. The website features semantic HTML5, adaptive CSS using SASS, and interactive JavaScript components.
+
+
+***************************
+
+## Deploy
+
+* [https://massaracsh7.github.io/plants/](https://massaracsh7.github.io/plants/)
+
+***************************
 
 ## Key Features
 
