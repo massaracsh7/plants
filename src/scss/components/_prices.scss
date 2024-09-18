@@ -1,0 +1,248 @@
+.prices {
+  padding-top: 40px;
+  margin-bottom: 36px;
+  background-color: #fff;
+
+  @include media-tablet {
+    padding: 42px 0 67px 0;
+    margin-bottom: 5px;
+  }
+
+  @include media-mobilesm {
+    padding: 25px 0 40px 0;
+    margin-bottom: 0px;
+  }
+
+  &__container {
+    padding-bottom: 92px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../assets/images/leafs-small.png");
+    background-repeat: no-repeat;
+    background-position: 101% 75%;
+
+    @include media-tablet {
+      background-image: url("../assets/images/leafs-small.png");
+      background-position: bottom 10px right 45px;
+    }
+
+    @include media-mobile {
+      flex-direction: column;
+      background-position: bottom 0 left 50px;
+    }
+
+    @include media-mobilesm {
+      background-image: none;
+      flex-direction: column;
+      padding-bottom: 0;
+      align-items: center;
+    }
+  }
+
+  &__inner {
+    flex: 0 0 332px;
+
+    @include media-mobilesm {
+      flex: 1 0 224px;
+      width: 224px;
+    }
+  }
+
+  &__col {
+    flex: 0 0 452px;
+    text-align: right;
+
+    @include media-laptop {
+      flex: 0 0 45%;
+    }
+
+    @include media-tablet {
+      flex: 0 0 296px;
+      padding-top: 99px;
+    }
+
+    @include media-mobilesm {
+      flex: 0 0 min-content;
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 58px;
+
+    @include media-tablet {
+      margin-bottom: 57px;
+      padding-left: 15px;
+    }
+
+    @include media-mobilesm {
+      padding-left: 0;
+      margin-bottom: 38px;
+    }
+  }
+
+  &__list {
+    padding: 34px 41px 33px 40px;
+    border: 1px solid #E3E1D5;
+    border-radius: 20px;
+
+    @include media-tablet {
+      padding-top: 31px;
+    }
+
+    @include media-mobilesm {
+      padding: 28px 23px 26px;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    background-color: $color-bg;
+    color: #000;
+    padding: 15px 40px;
+    border-radius: 20px;
+    @extend %transition;
+
+    @include media-mobilesm {
+      padding: 16px 28px;
+    }
+
+    &:hover,
+    &--open {
+      background-color: #D6E7D2;
+    }
+
+    //&--open>.prices__name>.prices__btn {
+    //  background-image: url('./img/arrow-wh.svg');
+    //  background-color: #AEA1A1;
+    //}
+
+    &:not(:last-child) {
+      margin-bottom: 32px;
+
+      @include media-mobilesm {
+        margin-bottom: 13px;
+      }
+    }
+
+    &:last-child {
+      @include media-mobilesm {
+        padding-bottom: 13px;
+      }
+    }
+
+  }
+
+  &__name {
+    position: relative;
+
+    h5 {
+      @include font(20px, 20px, 700);
+
+      @include media-mobilesm {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__btn {
+    @extend %btn-accordeon;
+    background-image: url('../assets/images/arrow.svg');
+    background-color: #D9D9D9;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+
+    @include media-mobilesm {
+      right: 9px;
+    }
+
+    &:hover,
+    &--open {
+      background-image: url('../assets/images/arrow-wh.svg');
+      background-color: #AEA1A1;
+    }
+  }
+
+  &__description {
+    display: none;
+    @include font(10px, 10px, 400);
+    color: #717171;
+    border-top: 1px solid #AEA1A1;
+    padding-top: 6px;
+    margin-top: 10px;
+    margin-bottom: -4px;
+  }
+
+  &__item--open>.prices__description {
+    display: block;
+  }
+
+  &__text {
+    margin-bottom: 6px;
+  }
+
+  &__number {
+    margin-bottom: 7px;
+    @include font(12px, 20px, 400);
+    color: #000;
+
+    span {
+      @include font(16px, 20px, 700);
+      color: $color-additional;
+    }
+  }
+
+  &__order {
+    border-radius: 10px;
+    border: none;
+    padding: 2px 26px 2px 21px;
+    @include font(14px, 20px, 700);
+    background-color: #fff;
+    color: #717171;
+  }
+
+}
+
+.call-us {
+  @include media-mobilesm {
+    text-align: center;
+    width: 230px;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @include media-laptop {
+      font-size: 25px;
+    }
+
+    @include media-tablet {
+      font-size: 25px;
+      line-height: 35px;
+      margin-bottom: 27px;
+    }
+
+    @include media-mobilesm {
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 35px;
+    }
+
+  }
+
+  &__button {
+    min-width: 164px;
+
+    @include media-tablet {
+      min-width: 160px;
+      box-shadow: none;
+    }
+
+    @include media-mobilesm {
+      min-width: 121px;
+      box-shadow: none;
+    }
+  }
+
+}

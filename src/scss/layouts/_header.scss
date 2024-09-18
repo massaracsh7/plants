@@ -1,0 +1,55 @@
+.header {
+
+  background-color: $color-bg;
+  padding: 42px 0;
+  @extend %transition;
+
+  @include media-tablet {
+    padding: 35px 0 30px;
+  }
+
+  @include media-mobile {
+    padding: 25px 0 39px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 12px;
+  }
+
+  &--mobile {
+    @extend %transition;
+
+    @include media-mobile {
+      padding-bottom: 130px;
+    }
+  }
+
+  &__navigation {
+    @extend %transition;
+
+    @include media-mobile {
+      position: absolute;
+      background-color: white;
+      border-radius: 20px;
+      padding: 40px 20px;
+      box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+      top: 0px;
+      left: 40%;
+      text-align: center;
+      right: 0;
+      transform: translateY(-500%);
+
+      &--active {
+        @include media-mobile {
+          transform: translateY(0);
+        }
+      }
+
+    }
+  }
+
+}

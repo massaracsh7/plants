@@ -1,0 +1,95 @@
+.welcome {
+  background: $color-bg;
+  padding-top: 62px;
+  padding-bottom: 62px;
+
+  @include media-tablet {
+    padding-top: 0;
+    padding-bottom: 71px;
+  }
+
+  @include media-mobile {
+    background-image: url("../assets/images/leafs-small.png");
+    background-position: bottom 0 right 0;
+    background-repeat: no-repeat;
+  }
+
+  @include media-mobilesm {
+    background-image: none;
+    padding-bottom: 24px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    background-image: url("../assets/images/leafs.png");
+    background-repeat: no-repeat;
+    background-position: -10px;
+
+    @include media-laptop {
+      background-image: url("../assets/images/leafs-middle.png");
+      background-position: bottom 0 right 0;
+      justify-content: flex-start;
+      padding-bottom: 0;
+    }
+
+    @include media-tablet {
+      background-position: top 30px right 50px;
+      padding-bottom: 0;
+    }
+
+    @include media-mobile {
+      background-image: none;
+    }
+
+    @include media-mobilesm {
+      background-image: none;
+    }
+  }
+
+  &__title {
+    padding-top: 38px;
+    margin-bottom: 42px;
+
+    @include media-tablet {
+      margin-bottom: 33px;
+      padding-top: 40px;
+    }
+
+    @include media-mobilesm {
+      padding-top: 9px;
+      margin-bottom: 23px;
+    }
+
+    &>span {
+      color: $color-primary;
+    }
+  }
+
+  &__content {
+    max-width: 550px;
+
+    @include media-tablet {
+      max-width: 348px;
+    }
+  }
+
+  &__text {
+    line-height: 35px;
+    margin-bottom: 48px;
+
+    @include media-tablet {
+      font-size: 16px;
+      line-height: 25px;
+      margin-bottom: 35px;
+      padding-left: 5px;
+    }
+
+    @include media-mobilesm {
+      margin-bottom: 23px;
+      padding-left: 0;
+    }
+  }
+
+}

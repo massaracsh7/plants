@@ -1,0 +1,33 @@
+.menu {
+  display: flex;
+  gap: 48px;
+  padding-top: 5px;
+
+  @include media-mobile {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+  }
+
+  &__link {
+    @extend %font-add;
+    @include font(16px, 23px, 400);
+    color: $color-nav;
+    @extend %transition;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-additional;
+      @extend %text-shadow;
+    }
+
+    &--active,
+    &--active:hover {
+      color: $color-additional;
+      font-weight: 700;
+
+    }
+
+  }
+}

@@ -1,0 +1,35 @@
+.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  &__link {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @extend %transition;
+    &:hover {
+      @extend %drop-shadow;
+    }
+
+    &--inst {
+      background-image: url("../assets/images/social/inst.svg");
+    }
+
+    &--fb {
+      background-image: url("../assets/images/social/fb.svg");
+    }
+
+    &--tw {
+      background-image: url("../assets/images/social/tw.svg");
+    }
+
+    &--pin {
+      background-image: url("../assets/images/social/pinterest.svg");
+    }
+
+  }
+}
