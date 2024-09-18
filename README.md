@@ -79,4 +79,3 @@ To get this project up and running on your local machine, follow these steps:
    npm run deploy
   
   This will update the gh-pages branch of your repository with the contents of the dist directory, making your project live on GitHub Pages.
-
