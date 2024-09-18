@@ -2,7 +2,18 @@
 
 ## Overview
 
-"Plants" is a landing page project designed to showcase garden plant growing and care services. This project is part of the stage#0 tasks RSSchool, where participants create an adaptive and interactive landing page. The website features semantic HTML5, adaptive CSS using SASS, and interactive JavaScript components.
+![Screen ](src/assets/screen.png)
+
+"Plants" is a landing page project designed to showcase garden plant growing and care services. This project is part of the tasks RSSchool, where participants create an adaptive and interactive landing page. The website features semantic HTML5, adaptive CSS using SASS, and interactive JavaScript components.
+
+
+***************************
+
+## Deploy
+
+* [https://massaracsh7.github.io/plants/](https://massaracsh7.github.io/plants/)
+
+***************************
 
 ## Key Features
 
@@ -40,7 +51,7 @@ To get this project up and running on your local machine, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/plants.git
+   git clone https://github.com/massaracsh7/plants.git
    cd plants
 
 2. **Install dependencies:**
@@ -68,3 +79,4 @@ To get this project up and running on your local machine, follow these steps:
    npm run deploy
   
   This will update the gh-pages branch of your repository with the contents of the dist directory, making your project live on GitHub Pages.
+
